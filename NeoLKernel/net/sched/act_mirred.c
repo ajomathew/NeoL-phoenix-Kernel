@@ -257,8 +257,4 @@ static void __exit mirred_cleanup_module(void)
 
 module_init(mirred_init_module);
 module_exit(mirred_cleanup_module);
-<<<<<<< HEAD
 
-
-=======
->>>>>>> parent of 0b7508c... Tweek NETSched

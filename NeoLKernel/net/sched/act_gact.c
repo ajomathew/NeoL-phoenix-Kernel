@@ -216,8 +216,4 @@ static void __exit gact_cleanup_module(void)
 
 module_init(gact_init_module);
 module_exit(gact_cleanup_module);
-<<<<<<< HEAD
 
-
-=======
->>>>>>> parent of 0b7508c... Tweek NETSched

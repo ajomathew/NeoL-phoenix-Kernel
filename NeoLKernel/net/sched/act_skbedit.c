@@ -201,8 +201,4 @@ static void __exit skbedit_cleanup_module(void)
 
 module_init(skbedit_init_module);
 module_exit(skbedit_cleanup_module);
-<<<<<<< HEAD
 
-
-=======
->>>>>>> parent of 0b7508c... Tweek NETSched
