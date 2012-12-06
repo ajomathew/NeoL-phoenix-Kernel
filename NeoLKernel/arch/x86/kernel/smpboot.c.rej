@@ -1,0 +1,11 @@
+--- arch/x86/kernel/smpboot.c
++++ arch/x86/kernel/smpboot.c
+@@ -457,7 +457,7 @@
+ 		"Total of %d processors activated (%lu.%02lu BogoMIPS).\n",
+ 		num_online_cpus(),
+ 		bogosum/(500000/HZ),
+-		(bogosum/(5000/HZ))%100);
++		(bogosum * 10/(50000/HZ))%100);
+ 
+ 	pr_debug("Before bogocount - setting activated=1.\n");
+ }
