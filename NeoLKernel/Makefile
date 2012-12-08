@@ -1,4 +1,4 @@
-	VERSION = 2
+VERSION = 2
 PATCHLEVEL = 6
 SUBLEVEL = 32
 EXTRAVERSION = .9
@@ -15,8 +15,6 @@ NAME = Man-Eating Seals of Antiquity
 #    (this increases performance and avoids hard-to-debug behaviour);
 # o  print "Entering directory ...";
 MAKEFLAGS += -rR --no-print-directory
-# This warning generated too much noise in a regular build.
-#KBUILD_CFLAGS += $(call cc-option, -Wno-unused-but-set-variable)
 
 # We are using a recursive build, so we need to do a little thinking
 # to get the ordering right.
@@ -344,11 +342,10 @@ LINUXINCLUDE    := -Iinclude \
 KBUILD_CPPFLAGS := -D__KERNEL__
 
 KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
-		   -w \
+		   -Werror \
 		   -fno-strict-aliasing -fno-common \
 		   -Werror-implicit-function-declaration \
 		   -Wno-format-security \
-                   -Wno-error=unused-but-set-variable \
 		   -fno-delete-null-pointer-checks
 KBUILD_AFLAGS   := -D__ASSEMBLY__
 
