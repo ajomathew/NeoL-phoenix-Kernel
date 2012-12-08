@@ -1,4 +1,4 @@
-NeoL-phoenix-Kernel v
+NeoL-phoenix-Kernel v1.1
 ===================
 
 This contains the source used to create Tigris Kernel
