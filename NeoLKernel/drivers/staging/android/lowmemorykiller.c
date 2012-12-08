@@ -166,13 +166,7 @@ static int lowmem_shrink(int nr_to_scan, gfp_t gfp_mask)
 		lowmem_print(2, "select %d (%s), adj %d, size %d, to kill\n",
 			     p->pid, p->comm, oom_adj, tasksize);
 	}
-	if (selected) {	
-		if (fatal_signal_pending(selected)) {
-			pr_warning("process %d is suffering a slow death\n",
-			selected->pid);
-			read_unlock(&tasklist_lock);
-			return rem;	
-			}
+	if (selected) {
 		lowmem_print(1, "send sigkill to %d (%s), adj %d, size %d\n",
 			     selected->pid, selected->comm,
 			     selected_oom_adj, selected_tasksize);

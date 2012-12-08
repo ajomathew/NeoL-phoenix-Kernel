@@ -111,6 +111,7 @@ config CPU_FREQ_DEFAULT_GOV_CONSERVATIVE
 	  governor. If unsure have a look at the help section of the
 	  driver. Fallback governor will be the performance governor.
 
+<<<<<<< HEAD
 config CPU_FREQ_DEFAULT_GOV_SMARTASS
 	bool "smartass"
 	select CPU_FREQ_GOV_SMARTASS
@@ -175,10 +176,13 @@ config CPU_FREQ_DEFAULT_GOV_LAGFREE
           governor. If unsure have a look at the help section of the
           driver. Fallback governor will be the performance governor.
 
+=======
+>>>>>>> 4.1.B.0.621
 config CPU_FREQ_DEFAULT_GOV_INTERACTIVE
 	bool "interactive"
 	select CPU_FREQ_GOV_INTERACTIVE
 	help
+<<<<<<< HEAD
 	  Use the 'interactive' governor as default. This gets full cpu frequency
 	  scaling for workloads that are latency sensitive, typically interactive
 	  workloads..
@@ -189,6 +193,12 @@ config CPU_FREQ_DEFAULT_GOV_INTELLIDEMAND2
 	help
 	  Use the CPUFreq governor 'intellidemand2' as default. This is
 	  based on Ondemand with browsing detection based on GPU loading
+=======
+	  Use the CPUFreq governor 'interactive' as default. This allows
+	  you to get a full dynamic cpu frequency capable system by simply
+	  loading your cpufreq low-level hardware driver, using the
+	  'interactive' governor for latency-sensitive workloads.
+>>>>>>> 4.1.B.0.621
 
 endchoice
 
@@ -359,6 +369,7 @@ config CPU_FREQ_GOV_CONSERVATIVE
 	  For details, take a look at linux/Documentation/cpu-freq.
 
 	  If in doubt, say N.
+<<<<<<< HEAD
 
 config CPU_FREQ_VDD_LEVELS
 	bool "CPU Vdd levels sysfs interface"
@@ -469,5 +480,7 @@ config INTELLI_MAX_INACTIVE_FREQ
     default  806000
     help
       Set default max inactive frequency for intellidemand2
+=======
+>>>>>>> 4.1.B.0.621
 
 endif	# CPU_FREQ

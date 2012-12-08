@@ -327,4 +327,3 @@ static void __exit nat_cleanup_module(void)
 
 module_init(nat_init_module);
 module_exit(nat_cleanup_module);
-
