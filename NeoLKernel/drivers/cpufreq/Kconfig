@@ -112,6 +112,9 @@ config CPU_FREQ_DEFAULT_GOV_CONSERVATIVE
 	  driver. Fallback governor will be the performance governor.
 
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> aa415804883556d968321c99564bab85e185e2bf
 config CPU_FREQ_DEFAULT_GOV_SMARTASS
 	bool "smartass"
 	select CPU_FREQ_GOV_SMARTASS
@@ -176,13 +179,19 @@ config CPU_FREQ_DEFAULT_GOV_LAGFREE
           governor. If unsure have a look at the help section of the
           driver. Fallback governor will be the performance governor.
 
+<<<<<<< HEAD
+=======
 =======
 >>>>>>> 4.1.B.0.621
+>>>>>>> aa415804883556d968321c99564bab85e185e2bf
 config CPU_FREQ_DEFAULT_GOV_INTERACTIVE
 	bool "interactive"
 	select CPU_FREQ_GOV_INTERACTIVE
 	help
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> aa415804883556d968321c99564bab85e185e2bf
 	  Use the 'interactive' governor as default. This gets full cpu frequency
 	  scaling for workloads that are latency sensitive, typically interactive
 	  workloads..
@@ -193,12 +202,15 @@ config CPU_FREQ_DEFAULT_GOV_INTELLIDEMAND2
 	help
 	  Use the CPUFreq governor 'intellidemand2' as default. This is
 	  based on Ondemand with browsing detection based on GPU loading
+<<<<<<< HEAD
+=======
 =======
 	  Use the CPUFreq governor 'interactive' as default. This allows
 	  you to get a full dynamic cpu frequency capable system by simply
 	  loading your cpufreq low-level hardware driver, using the
 	  'interactive' governor for latency-sensitive workloads.
 >>>>>>> 4.1.B.0.621
+>>>>>>> aa415804883556d968321c99564bab85e185e2bf
 
 endchoice
 
@@ -482,5 +494,136 @@ config INTELLI_MAX_INACTIVE_FREQ
       Set default max inactive frequency for intellidemand2
 =======
 >>>>>>> 4.1.B.0.621
+
+config CPU_FREQ_VDD_LEVELS
+	bool "CPU Vdd levels sysfs interface"
+	depends on CPU_FREQ_STAT
+	depends on ARCH_MSM7X30
+	default n
+	help
+	  CPU Vdd levels sysfs interface
+
+config CPU_FREQ_GOV_INTERACTIVE
+	tristate "'interactive' cpufreq policy governor"
+	help
+	  'interactive' - This driver adds a dynamic cpufreq policy governor.
+	  Designed for low latency burst workloads. Scaling it done when coming
+	  out of idle instead of polling.
+
+config CPU_FREQ_GOV_SMARTASS
+	tristate "'smartass' cpufreq governor"
+	help
+	  smartass cpufreq governor.
+
+config CPU_FREQ_GOV_SMARTASS2
+	tristate "'smartassV2' cpufreq governor"
+	help
+	  smartassV2 cpufreq governor.
+
+config CPU_FREQ_GOV_INTERACTIVEX
+	tristate "'interactiveX' cpufreq governor"
+	help
+	  interactiveX cpufreq governor.
+
+config CPU_FREQ_GOV_SAVAGEDZEN
+	tristate "'SavagedZen' cpufreq governor"
+	help
+	  SavagedZen cpufreq governor.
+
+config CPU_FREQ_GOV_SCARY
+	tristate "'Scary' cpufreq governor"
+	help
+	  Scary cpufreq governor.
+
+config CPU_FREQ_GOV_MINMAX
+	tristate "'minmax' cpufreq governor"
+	help
+	  Scary cpufreq governor.
+
+config CPU_FREQ_GOV_SMOOTHASS
+	tristate "'smoothass' cpufreq governor"
+	depends on CPU_FREQ
+	help
+	smoothass' - a "slightly more agressive smartass" governor!
+ 	
+	If in doubt, say N.
+
+config CPU_FREQ_GOV_BRAZILIANWAX
+	tristate "'brazilianwax' cpufreq governor"
+	depends on CPU_FREQ
+	help
+	  'brazilianwax' - a "slightly more agressive smart" optimized governor!
+
+
+config CPU_FREQ_MIN_TICKS
+  int "Ticks between governor polling interval."
+  default 10
+  help
+    Minimum number of ticks between polling interval for governors.
+	
+config CPU_FREQ_SAMPLING_LATENCY_MULTIPLIER
+  int "Sampling rate multiplier for governors."
+  default 1000
+  help
+    Sampling latency rate multiplied by the cpu switch latency.
+    Affects governor polling.
+
+config CPU_FREQ_GOV_INTELLIDEMAND2
+        tristate "'intellidemand2' cpufreq policy governor"
+        select CPU_FREQ_TABLE
+        help
+          'intellidemand2' - This driver adds a dynamic cpufreq policy governor.
+          The governor does a periodic polling and
+          changes frequency based on the CPU utilization.
+          The support for this governor depends on CPU capability to
+          do fast frequency switching (i.e, very low latency frequency
+          transitions). with browsing detection based on GPU loading
+
+          To compile this driver as a module, choose M here: the
+          module will be called cpufreq_ondemand.
+
+          For details, take a look at linux/Documentation/cpu-freq.
+
+          If in doubt, say N.
+
+config SEC_LIMIT_MAX_FREQ
+	bool "Limit Max Freq"
+	help
+		Limit max frequency for Intellidemand2 while screen is on
+          
+config INTELLI_MAX_ACTIVE_FREQ
+    int "Max Active Freq for Intellidemand2"
+    depends on CPU_FREQ_GOV_INTELLIDEMAND2
+    default  1516000
+    help
+      Set default max active frequency for intellidemand2
+
+config INTELLI_MAX_INACTIVE_FREQ
+    int "Max Inactive Freq for Intellidemand2"
+    depends on CPU_FREQ_GOV_INTELLIDEMAND2
+    default  806000
+    help
+      Set default max inactive frequency for intellidemand2
+
+
+config SEC_LIMIT_MAX_FREQ
+	bool "Limit Max Freq"
+	help
+		Limit max frequency for Intellidemand2 while screen is on
+          
+config INTELLI_MAX_ACTIVE_FREQ
+    int "Max Active Freq for Intellidemand2"
+    depends on CPU_FREQ_GOV_INTELLIDEMAND2
+    default  1516000
+    help
+      Set default max active frequency for intellidemand2
+
+config INTELLI_MAX_INACTIVE_FREQ
+    int "Max Inactive Freq for Intellidemand2"
+    depends on CPU_FREQ_GOV_INTELLIDEMAND2
+    default  806000
+    help
+      Set default max inactive frequency for intellidemand2
+
 
 endif	# CPU_FREQ
