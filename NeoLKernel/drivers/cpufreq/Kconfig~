@@ -368,7 +368,7 @@ config CPU_FREQ_GOV_CONSERVATIVE
 	  For details, take a look at linux/Documentation/cpu-freq.
 
 	  If in doubt, say N.
-
+<<<<<<< HEAD
 
 config CPU_FREQ_VDD_LEVELS
 	bool "CPU Vdd levels sysfs interface"
@@ -479,7 +479,8 @@ config INTELLI_MAX_INACTIVE_FREQ
     default  806000
     help
       Set default max inactive frequency for intellidemand2
-
+=======
+>>>>>>> 4.1.B.0.621
 
 config CPU_FREQ_VDD_LEVELS
 	bool "CPU Vdd levels sysfs interface"
